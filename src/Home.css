@@ -1,0 +1,301 @@
+/* ========================= */
+/* GLOBAL RESET */
+/* ========================= */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+  background: #e5e5e5;
+}
+
+img,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========================= */
+/* PAGE WRAPPER */
+/* ========================= */
+
+.page-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 16px;
+}
+
+/* ========================= */
+/* HERO SECTION */
+/* ========================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  border-radius: 40px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+.navbar {
+  position: relative;
+  z-index: 2;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-main {
+  font-weight: 700;
+  font-size: 18px;
+  display: block;
+}
+
+.logo-sub {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.quote-btn {
+  background: #8bd03f;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.quote-btn:hover {
+  background: #78ba33;
+}
+
+/* ========================= */
+/* HERO CONTENT */
+/* ========================= */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 60px;
+  margin-bottom: 160px;
+  color: white;
+  max-width: 100%;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #8bd03f;
+  border-radius: 50%;
+}
+
+.hero-content h1 {
+  font-size: clamp(42px, 6vw, 88px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+
+.hero-content h1 span {
+  opacity: 0.6;
+}
+
+.hero-description {
+  max-width: 520px;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* ========================= */
+/* QUOTE BAR (DESKTOP) */
+/* ========================= */
+
+.quote-bar {
+  position: relative;
+  z-index: 2;
+  background: #f3f3f3;
+  margin: 0 60px 40px;
+  padding: 30px;
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 180px;
+  min-width: 140px;
+}
+
+.form-group label {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.form-group select,
+.form-group input {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  width: 100%;
+}
+
+.quote-bar-btn {
+  background: #8bd03f;
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.quote-bar-btn:hover {
+  background: #78ba33;
+}
+
+/* ========================= */
+/* MOBILE TRANSFORMATION */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .page-wrapper {
+    padding: 12px;
+  }
+
+  .hero {
+    border-radius: 32px;
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+
+  .navbar {
+    padding: 18px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  /* Center top quote button */
+  .quote-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 16px 32px;
+  }
+
+  .hero-content {
+    padding: 0 20px;
+    margin-bottom: 60px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(36px, 9vw, 48px);
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  /* Convert quote bar to stacked card */
+  .quote-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    border-radius: 30px;
+    margin: 30px 0;
+    padding: 24px;
+    width: 100%;
+  }
+
+  .form-group {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 16px;
+  }
+
+  .form-group:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .quote-bar-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

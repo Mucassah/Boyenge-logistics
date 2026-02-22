@@ -1,0 +1,126 @@
+/* BOYENGE LOGISTICS - CONTACT PAGE STYLES
+   Namespace: bl-ct- (Boyenge Logistics Contact)
+*/
+
+:root {
+    --bl-ct-lime: #a3c656;
+    --bl-ct-dark: #0c0c0c;
+    --bl-ct-white: #ffffff;
+    --bl-ct-gray: #888888;
+    --bl-ct-border: #f0f0f0;
+}
+
+.bl-ct-page-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bl-ct-white);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* --- 1. NAVIGATION --- */
+.bl-ct-navbar-pill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    max-width: 1400px;
+    margin: 15px auto;
+    background: var(--bl-ct-white);
+    padding: 10px 32px;
+    border-radius: 100px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    position: relative;
+    z-index: 50;
+}
+.bl-ct-logo-img { height: 24px; cursor: pointer; }
+.bl-ct-nav-links-group { display: flex; gap: 35px; }
+.bl-ct-nav-links-group a { color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.85rem; }
+.bl-ct-quote-cta-btn { background: var(--bl-ct-lime); color: white; border: none; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.75rem; cursor: pointer; }
+
+/* --- 2. HERO SECTION --- */
+.bl-ct-hero-section { padding: 20px 0 40px 0; display: flex; justify-content: center; }
+.bl-ct-hero-container {
+    width: 95%; max-width: 1400px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 30px;
+    align-items: center; background: #ffffff; padding: 30px 50px; border-radius: 30px; border: 1px solid var(--bl-ct-border);
+}
+.bl-ct-badge-pill { display: inline-flex; align-items: center; gap: 6px; background: #f8f9fa; padding: 4px 12px; border-radius: 50px; font-size: 0.65rem; font-weight: 800; margin-bottom: 15px; }
+.bl-ct-dot { width: 6px; height: 6px; background-color: var(--bl-ct-lime); border-radius: 50%; }
+.bl-ct-title { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 850; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 15px; color: #1a1a1a;}
+.bl-ct-text-lime { color: var(--bl-ct-lime); }
+.bl-ct-subtitle { font-size: 1rem; color: #555; line-height: 1.4; max-width: 480px; margin-bottom: 25px; }
+.bl-ct-hero-btns { display: flex; gap: 12px; }
+.bl-ct-btn-lime-large, .bl-ct-btn-black-large { padding: 16px 35px; border-radius: 50px; font-weight: 800; font-size: 0.85rem; border: none; cursor: pointer; transition: 0.2s; }
+.bl-ct-btn-lime-large { background-color: var(--bl-ct-lime); color: white; }
+.bl-ct-btn-black-large { background-color: #1a1a1a; color: white; }
+.bl-ct-hero-image-card { height: 350px; border-radius: 25px; background-size: cover; background-position: center; position: relative; display: flex; align-items: flex-end; padding: 25px; overflow: hidden; }
+.bl-ct-region-badge { background: white; padding: 10px 20px; border-radius: 50px; font-weight: 850; font-size: 0.7rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+/* --- 3. CONTACT FORM & INFO SECTION --- */
+.bl-ct-details-section { padding: 40px 0 80px 0; display: flex; justify-content: center; }
+.bl-ct-details-container { width: 95%; max-width: 1400px; display: grid; grid-template-columns: 1.6fr 1fr; gap: 30px; }
+
+.bl-ct-message-card { background: #ffffff; border-radius: 60px; padding: 60px; border: 1px solid var(--bl-ct-border); }
+.bl-ct-form-tag { font-size: 0.65rem; font-weight: 800; color: var(--bl-ct-lime); letter-spacing: 1.5px; text-transform: uppercase; }
+.bl-ct-form-title { font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 850; letter-spacing: -2px; margin: 15px 0 40px 0; color: #1a1a1a; }
+.bl-ct-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+.bl-ct-full-width { grid-column: span 2; }
+.bl-ct-input-group { display: flex; flex-direction: column; gap: 10px; }
+.bl-ct-input-group label { font-size: 0.65rem; font-weight: 800; color: #bbb; letter-spacing: 1px; }
+.bl-ct-input-group input, .bl-ct-select, .bl-ct-input-group textarea { background: #f8f9fa; border: none; padding: 20px; border-radius: 20px; font-family: inherit; font-size: 0.95rem; outline: none; }
+.bl-ct-input-group textarea { height: 150px; resize: none; }
+.bl-ct-submit-btn { grid-column: span 2; background: #000; color: #fff; border: none; padding: 22px; border-radius: 50px; font-weight: 800; font-size: 0.85rem; letter-spacing: 1px; cursor: pointer; margin-top: 10px; transition: 0.3s; }
+.bl-ct-submit-btn:hover { background: var(--bl-ct-lime); }
+.bl-ct-disclaimer { text-align: center; font-size: 0.75rem; color: #bbb; margin-top: 20px; }
+
+.bl-ct-info-stack { display: flex; flex-direction: column; gap: 30px; }
+.bl-ct-reach-card { background: #ffffff; border-radius: 60px; padding: 50px; border: 1px solid var(--bl-ct-border); }
+.bl-ct-reach-title { font-size: 2rem; font-weight: 850; letter-spacing: -1.5px; margin: 10px 0 30px 0; }
+.bl-ct-reach-list { display: flex; flex-direction: column; gap: 25px; }
+.bl-ct-reach-item { display: flex; gap: 15px; align-items: flex-start; }
+.bl-ct-reach-dot { width: 10px; height: 10px; background: var(--bl-ct-lime); border-radius: 50%; margin-top: 5px; }
+.bl-ct-reach-item strong { display: block; font-size: 0.65rem; font-weight: 800; color: #1a1a1a; letter-spacing: 1px; margin-bottom: 5px; }
+.bl-ct-reach-item p { color: #666; font-size: 1rem; margin: 0; }
+
+.bl-ct-quote-mini-card { flex-grow: 1; border-radius: 60px; position: relative; overflow: hidden; min-height: 280px; background-size: cover; background-position: center;}
+.bl-ct-quote-mini-overlay { background: rgba(0,0,0,0.75); padding: 50px; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+.bl-ct-mini-tag { color: var(--bl-ct-lime); font-weight: 800; font-size: 0.65rem; letter-spacing: 1px; }
+.bl-ct-mini-title { color: #fff; font-size: 2rem; font-weight: 850; margin: 10px 0; letter-spacing: -1px; }
+.bl-ct-mini-text { color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.4; margin-bottom: 25px; max-width: 320px; }
+.bl-ct-mini-btn { background: var(--bl-ct-lime); color: #fff; border: none; padding: 15px 35px; border-radius: 50px; font-weight: 800; cursor: pointer; transition: 0.2s; }
+.bl-ct-mini-btn:hover { transform: translateY(-2px); }
+
+/* --- 4. FOOTER --- */
+.bl-ct-site-footer { background-color: var(--bl-ct-dark); color: var(--bl-ct-white); width: 100%; border-radius: 60px 60px 0 0; padding: 100px 0 40px 0; margin-top: 40px;}
+.bl-ct-footer-wrapper { width: 95%; max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+.bl-ct-footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 60px; }
+.bl-ct-footer-logo-file { height: 45px; margin-bottom: 25px; cursor: pointer; }
+.bl-ct-footer-desc { color: var(--bl-ct-gray); line-height: 1.6; font-size: 14px; max-width: 300px; margin-bottom: 30px; }
+.bl-ct-footer-social-icons { display: flex; gap: 20px; }
+.bl-ct-social-link { color: white; text-decoration: none; font-size: 13px; font-weight: 600; opacity: 0.6; transition: 0.3s; }
+.bl-ct-social-link:hover { opacity: 1; color: var(--bl-ct-lime); }
+.bl-ct-footer-nav-column h3 { font-size: 11px; letter-spacing: 2px; margin-bottom: 30px; font-weight: 800; text-transform: uppercase; color: white; }
+.bl-ct-footer-nav-column ul { list-style: none; padding: 0; margin: 0; }
+.bl-ct-footer-nav-column ul li { margin-bottom: 15px; color: var(--bl-ct-gray); font-size: 14px; transition: 0.3s; }
+.bl-ct-footer-nav-column ul li a { color: inherit; text-decoration: none; }
+.bl-ct-footer-nav-column ul li:hover, .bl-ct-footer-nav-column ul li a:hover { color: var(--bl-ct-lime); cursor: pointer; }
+.bl-ct-footer-bottom-divider { margin-top: 80px; height: 1px; background-color: rgba(255, 255, 255, 0.05); }
+
+/* --- 5. RESPONSIVE --- */
+@media (max-width: 1100px) {
+    .bl-ct-hero-container, .bl-ct-details-container { grid-template-columns: 1fr; text-align: left; }
+    .bl-ct-hero-btns { justify-content: flex-start; }
+    .bl-ct-message-card, .bl-ct-reach-card, .bl-ct-quote-mini-card { border-radius: 40px; padding: 40px; }
+    .bl-ct-footer-grid { grid-template-columns: 1fr; text-align: left; gap: 40px; }
+    .bl-ct-footer-brand-column, .bl-ct-footer-nav-column ul { align-items: flex-start; display: flex; flex-direction: column; }
+    .bl-ct-footer-social-icons { justify-content: flex-start; }
+}
+
+@media (max-width: 768px) {
+    .bl-ct-nav-links-group { display: none !important; }
+    .bl-ct-navbar-pill { padding: 8px 16px; width: 92%; }
+    .bl-ct-form-grid { grid-template-columns: 1fr; }
+    .bl-ct-full-width, .bl-ct-submit-btn { grid-column: span 1; }
+    .bl-ct-site-footer { border-radius: 40px 40px 0 0; padding: 60px 0 30px 0; }
+}

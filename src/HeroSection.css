@@ -1,0 +1,282 @@
+/* Smooth scrolling for the logo anchor link */
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-lime: #a3c656;
+  --dark-overlay: rgba(0, 0, 0, 0.45);
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #f0f0f0;
+  width: 100%;
+}
+
+.hero-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 0; 
+}
+
+.main-container {
+  width: 99.5vw; 
+  max-width: 3000px;
+  height: 99vh; 
+  margin: 50px auto;
+  border-radius: 60px; 
+  
+  background-color: #1a1a1a; 
+  background-image: linear-gradient(var(--dark-overlay), var(--dark-overlay)), 
+                    url('./assets/Background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  position: relative;
+  padding: 60px 100px; 
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* --- NAVIGATION --- */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-link {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.logo-link:hover {
+  transform: scale(1.02);
+}
+
+.main-logo {
+  height: 55px;
+  display: block;
+  transition: height 0.3s ease;
+}
+
+.nav-links {
+  display: flex;
+  gap: 50px;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-quote-btn {
+  background-color: var(--primary-lime);
+  color: var(--white);
+  border: none;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.mobile-menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+/* --- HERO TEXT --- */
+.content-box {
+  margin-top: 50px;
+  color: var(--white);
+}
+
+.location-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--primary-lime);
+  border-radius: 50%;
+}
+
+.hero-title {
+  font-size: clamp(3.5rem, 8.5vw, 7.5rem); 
+  line-height: 1.0;
+  font-weight: 900;
+  color:var(--white);
+  margin-bottom: 30px;
+}
+
+.light-text { 
+  font-weight: 400;
+  columns: var(--white); 
+}
+
+/* --- QUOTE WIDGET --- */
+.quote-card {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--white);
+  width: 97%; 
+  max-width: 1800px;
+  border-radius: 120px;
+  padding: 15px 15px 15px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.field {
+  flex: 1;
+}
+
+.field label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #bbb;
+  margin-bottom: 4px;
+}
+
+.field-input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.field-input select, 
+.field-input input {
+  border: none;
+  outline: none;
+  font-weight: 700;
+  font-size: 1rem;
+  width: 100%;
+  background: transparent;
+  color: #333;
+  padding: 0;
+}
+
+.field-divider {
+  width: 1px;
+  height: 60px;
+  background: #f0f0f0;
+  margin: 0 40px;
+}
+
+.submit-quote-btn {
+  background-color: var(--primary-lime);
+  color: var(--white);
+  border: none;
+  padding: 24px 60px;
+  border-radius: 80px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  font-size: 1.15rem;
+}
+
+
+
+/* --- RESPONSIVENESS --- */
+
+@media (max-width: 1024px) {
+  /* Logo resizing */
+  .main-logo { height: 40px; }
+
+  /* Hide links and menu icon, keep Quote button */
+  .nav-links, .mobile-menu-icon { 
+    display: none !important; 
+  }
+  
+  .nav-quote-btn {
+    display: block !important;
+    padding: 12px 28px;
+    font-size: 0.9rem;
+  }
+
+  .main-container {
+    width: 98%; 
+    padding: 50px 30px;
+    height: auto;
+    min-height: 85vh;
+    border-radius: 40px;
+  }
+
+  .quote-card {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    margin-top: 50px;
+    transform: none;
+    left: 0;
+    border-radius: 40px;
+    flex-wrap: wrap;
+    padding: 30px;
+  }
+
+  .field-divider { display: none; }
+  .field { min-width: 48%; margin-bottom: 25px; }
+  .submit-quote-btn { width: 100%; justify-content: center; padding: 20px; }
+}
+
+@media (max-width: 600px) {
+  /* Mobile logo size */
+  .main-logo { height: 32px; }
+
+  .nav-quote-btn {
+    padding: 10px 16px;
+    font-size: 0.75rem;
+  }
+
+  .nav-right { gap: 10px; }
+
+  .main-container {
+    width: 96%; 
+    padding: 40px 20px;
+    border-radius: 35px;
+  }
+  
+  .hero-title { font-size: 2.8rem; }
+  .field { min-width: 100%; }
+}
