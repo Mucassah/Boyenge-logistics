@@ -188,7 +188,7 @@ const Logistics = () => {
                 </div>
               ))}
             </div>
-            {showRightArrow && <button className="scroll-arrow right" onClick={() => scroll('right')}>→</button>}
+            {showRightArrow && <button className="scroll-arrow right" onClick={() => scroll('right')}>›››</button>}
           </div>
 
           <section className="stats-dashboard">
