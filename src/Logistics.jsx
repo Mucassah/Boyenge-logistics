@@ -170,7 +170,7 @@ const Logistics = () => {
           </header>
 
           <div className="scroll-wrapper">
-            {showLeftArrow && <button className="scroll-arrow left" onClick={() => scroll('left')}>‹</button>}
+            {showLeftArrow && <button className="scroll-arrow left" onClick={() => scroll('left')}>‹‹‹</button>}
             <div className="scroll-container" ref={scrollRef}>
               {vehicles.map((v) => (
                 <div key={v.id} className="vehicle-card">
@@ -188,7 +188,7 @@ const Logistics = () => {
                 </div>
               ))}
             </div>
-            {showRightArrow && <button className="scroll-arrow right" onClick={() => scroll('right')}>›</button>}
+            {showRightArrow && <button className="scroll-arrow right" onClick={() => scroll('right')}>›››</button>}
           </div>
 
           <section className="stats-dashboard">
