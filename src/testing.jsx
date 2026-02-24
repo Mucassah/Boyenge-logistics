@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Added Link for navigation
+import { Link } from 'react-router-dom'; 
 import { Truck, MapPin, ChevronRight, Menu } from 'lucide-react';
 import './Logistics.css';
 
@@ -87,10 +87,10 @@ const Logistics = () => {
             </div>
             <div className="nav-links">
               <a href="#home">Home</a>
-              <a href="#contact">Contact</a>
+              {/* UPDATED: Links to Contact.jsx via Router */}
+              <Link to="/contact">Contact</Link>
             </div>
             <div className="nav-right">
-              {/* UPDATED: Nav Button */}
               <Link to="/quote">
                 <button className="nav-quote-btn">GET A QUOTE</button>
               </Link>
@@ -149,7 +149,6 @@ const Logistics = () => {
                 <input type="text" placeholder="City / suburb" />
               </div>
             </div>
-            {/* UPDATED: Hero Card Button */}
             <Link to="/quote" style={{ textDecoration: 'none' }}>
               <button className="submit-quote-btn">
                 GET A QUOTE <ChevronRight size={18} />
@@ -171,7 +170,7 @@ const Logistics = () => {
           </header>
 
           <div className="scroll-wrapper">
-            {showLeftArrow && <button className="scroll-arrow left" onClick={() => scroll('left')}>‹</button>}
+            {showLeftArrow && <button className="scroll-arrow left" onClick={() => scroll('left')}>‹‹‹</button>}
             <div className="scroll-container" ref={scrollRef}>
               {vehicles.map((v) => (
                 <div key={v.id} className="vehicle-card">
@@ -182,7 +181,6 @@ const Logistics = () => {
                     <p className="description">{v.description}</p>
                     <div className="stats-grid"><div className="stat-item"><label>TARGET ITEMS</label><p>{v.items}</p></div></div>
                     <div className="stats-grid"><div className="stat-item"><label>SERVICES</label><p>{v.crew}</p></div></div>
-                    {/* UPDATED: Vehicle Card Button */}
                     <Link to="/quote">
                       <button className="cta-button">REQUEST A QUOTE <span className="arrow">→</span></button>
                     </Link>
@@ -190,10 +188,9 @@ const Logistics = () => {
                 </div>
               ))}
             </div>
-            {showRightArrow && <button className="scroll-arrow right" onClick={() => scroll('right')}>›</button>}
+            {showRightArrow && <button className="scroll-arrow right" onClick={() => scroll('right')}>›››git</button>}
           </div>
 
-          {/* ... Stats Section ... */}
           <section className="stats-dashboard">
             <div className="stat-card main-card">
               <div className="stat-content">
@@ -223,7 +220,6 @@ const Logistics = () => {
             </div>
           </section>
 
-          {/* ... Services Grid ... */}
           <section className="service-grid-section">
             <header className="grid-header">
               <div className="grid-header-left">
@@ -265,11 +261,13 @@ const Logistics = () => {
               <h2 className="cta-heading">Ready to move <br/> your goods?</h2>
               <p className="cta-subtext">Start a quote in minutes. Choose your vehicle class and share pickup/drop-off areas — we’ll confirm details and availability next.</p>
               <div className="cta-actions">
-                {/* UPDATED: Footer Banner Button */}
                 <Link to="/quote">
                   <button className="btn-primary">GET A QUOTE <span className="arrow">→</span></button>
                 </Link>
-                <button className="btn-secondary">CONTACT</button>
+                {/* UPDATED: Contact button navigation */}
+                <Link to="/contact">
+                  <button className="btn-secondary">CONTACT</button>
+                </Link>
               </div>
               <div className="cta-footer-info">
                 <span className="shield-icon">🛡️</span> OPTIONAL GOODS-IN-TRANSIT COVER
@@ -295,9 +293,9 @@ const Logistics = () => {
                 <h3>NAVIGATION</h3>
                 <ul>
                   <li><a href="#">Home</a></li>
-                  {/* UPDATED: Footer text link */}
                   <li><Link to="/quote">Request Quote</Link></li>
-                  <li><a href="#">Contact Us</a></li>
+                  {/* UPDATED: Footer text link */}
+                  <li><Link to="/contact">Contact Us</Link></li>
                 </ul>
               </div>
               <div className="footer-nav-column">

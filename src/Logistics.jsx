@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom'; 
 import { Truck, MapPin, ChevronRight, Menu } from 'lucide-react';
 import './Logistics.css';
 
@@ -30,8 +30,10 @@ const servicesList = [
 
 const Logistics = () => {
   const scrollRef = useRef(null);
+  const navigate = useNavigate(); // Added for redirection
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
+  const [trackingId, setTrackingId] = useState(''); // Added to store input value
 
   const checkScroll = () => {
     if (scrollRef.current) {
@@ -69,6 +71,15 @@ const Logistics = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Logic to handle tracking navigation
+  const handleTrackOrder = () => {
+    if (trackingId.trim()) {
+      navigate(`/track/${trackingId.trim()}`);
+    } else {
+      alert("Please enter a valid Tracking ID.");
+    }
+  };
+
   const groupedServices = [];
   for (let i = 0; i < servicesList.length; i += 3) {
     groupedServices.push(servicesList.slice(i, i + 3));
@@ -87,7 +98,6 @@ const Logistics = () => {
             </div>
             <div className="nav-links">
               <a href="#home">Home</a>
-              {/* UPDATED: Links to Contact.jsx via Router */}
               <Link to="/contact">Contact</Link>
             </div>
             <div className="nav-right">
@@ -158,7 +168,6 @@ const Logistics = () => {
         </div>
       </div>
 
-      {/* PART 2: VEHICLE SELECTOR & CONTENT */}
       <div className="page-wrapper">
         <div className="container">
           <header className="header">
@@ -190,6 +199,34 @@ const Logistics = () => {
             </div>
             {showRightArrow && <button className="scroll-arrow right" onClick={() => scroll('right')}>›››</button>}
           </div>
+
+          {/* NEW TRACK YOUR ORDER SECTION - UPDATED */}
+          <section className="tracking-cta-section">
+            <div className="tracking-inner">
+              <div className="tracking-text">
+                <div className="live-indicator">
+                  <span className="ping"></span>
+                  LIVE TRACKING
+                </div>
+                <h3>Track your shipment in real-time</h3>
+              </div>
+              <div className="tracking-action">
+                <div className="tracking-input-wrapper">
+                  <MapPin size={18} className="input-icon" />
+                  <input 
+                    type="text" 
+                    placeholder="Enter Tracking ID (e.g. BYG-123456)" 
+                    value={trackingId}
+                    onChange={(e) => setTrackingId(e.target.value)}
+                    onKeyDown={(e) => e.key === 'Enter' && handleTrackOrder()}
+                  />
+                </div>
+                <button className="track-submit-btn" onClick={handleTrackOrder}>
+                  TRACK ORDER <ChevronRight size={18} />
+                </button>
+              </div>
+            </div>
+          </section>
 
           <section className="stats-dashboard">
             <div className="stat-card main-card">
@@ -261,13 +298,8 @@ const Logistics = () => {
               <h2 className="cta-heading">Ready to move <br/> your goods?</h2>
               <p className="cta-subtext">Start a quote in minutes. Choose your vehicle class and share pickup/drop-off areas — we’ll confirm details and availability next.</p>
               <div className="cta-actions">
-                <Link to="/quote">
-                  <button className="btn-primary">GET A QUOTE <span className="arrow">→</span></button>
-                </Link>
-                {/* UPDATED: Contact button navigation */}
-                <Link to="/contact">
-                  <button className="btn-secondary">CONTACT</button>
-                </Link>
+                <Link to="/quote"><button className="btn-primary">GET A QUOTE <span className="arrow">→</span></button></Link>
+                <Link to="/contact"><button className="btn-secondary">CONTACT</button></Link>
               </div>
               <div className="cta-footer-info">
                 <span className="shield-icon">🛡️</span> OPTIONAL GOODS-IN-TRANSIT COVER
@@ -294,7 +326,6 @@ const Logistics = () => {
                 <ul>
                   <li><a href="#">Home</a></li>
                   <li><Link to="/quote">Request Quote</Link></li>
-                  {/* UPDATED: Footer text link */}
                   <li><Link to="/contact">Contact Us</Link></li>
                 </ul>
               </div>
@@ -303,9 +334,7 @@ const Logistics = () => {
                 <ul>
                   <li>+243 854 543 130</li>
                   <li>logistics@boyenge.com</li>
-                  <li>Qatar, Dubai</li>
-                  <li>Hong Kong, Philippines</li>
-                  <li>China, Congo</li>
+                  <li>Qatar, Dubai | China, Congo</li>
                 </ul>
               </div>
               <div className="footer-nav-column">
@@ -313,7 +342,6 @@ const Logistics = () => {
                 <ul>
                   <li><a href="#">Terms of Service</a></li>
                   <li><a href="#">Privacy Policy</a></li>
-                  <li><a href="#">GIT Insurance Info</a></li>
                 </ul>
               </div>
             </div>

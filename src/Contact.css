@@ -34,7 +34,7 @@
     position: relative;
     z-index: 50;
 }
-.bl-ct-logo-img { height: 24px; cursor: pointer; }
+.bl-ct-logo-img { height: 60px; cursor: pointer; }
 .bl-ct-nav-links-group { display: flex; gap: 35px; }
 .bl-ct-nav-links-group a { color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.85rem; }
 .bl-ct-quote-cta-btn { background: var(--bl-ct-lime); color: white; border: none; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.75rem; cursor: pointer; }
